@@ -1,0 +1,41 @@
+.package {
+    type 0 : integer
+    session 1 : integer
+}
+
+# 登录请求
+login 1 {
+    request {
+        account 0 : string
+    }
+    response {
+        ok 0 : boolean
+        player_id 1 : integer
+        msg 2 : string
+    }
+}
+
+# 播种请求
+plant 2 {
+    request {
+        land_id 0 : integer
+        crop_type 1 : string
+    }
+    response {
+        ok 0 : boolean
+        msg 1 : string
+    }
+}
+
+# 收获请求
+harvest 3 {
+    request {
+        land_id 0 : integer
+    }
+    response {
+        ok 0 : boolean
+        crop_type 1 : string
+        count 2 : integer
+        msg 3 : string
+    }
+}

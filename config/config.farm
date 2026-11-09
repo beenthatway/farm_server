@@ -1,0 +1,29 @@
+-- 根目录路径（根据你的项目实际路径调整，./ 表示当前目录）
+root = "./"
+
+-- 线程数（根据你的 CPU 核心数调整，开发环境配 4 即可）
+thread = 4
+
+-- 日志文件输出配置（如果设为 nil 则直接打印在终端）
+logger = nil
+-- logpath = "."
+
+-- cluster 节点配置（单机模式设为 0）
+harbor = 0
+
+-- 启动引导与入口服务
+start = "main"        -- 对应 service/main.lua
+bootstrap = "snlua bootstrap" -- 引擎启动引导
+
+-- C 与 Lua 服务加载路径
+luaservice = root .. "service/?.lua;" .. root .. "skynet/service/?.lua"
+lualoader = root .. "skynet/lualib/loader.lua"
+
+-- Lua 库加载路径（包含你自己写的 lualib 和 skynet 自带库）
+lua_path = root .. "lualib/?.lua;" .. 
+           root .. "skynet/lualib/?.lua;" .. 
+           root .. "skynet/lualib/?/init.lua"
+
+-- C 动态库加载路径
+lua_cpath = root .. "skynet/luaclib/?.so"
+cpath = root .. "skynet/cservice/?.so"

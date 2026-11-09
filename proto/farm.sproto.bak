@@ -1,0 +1,20 @@
+syntax = "proto3";
+package farm;
+
+message LoginReq {
+    string account = 1;
+}
+message LoginResp {
+    bool ok = 1;
+    int64 player_id = 2;
+    string msg = 3;
+}
+
+message PlantReq {
+    int32 land_id = 1;
+    string crop_type = 2;
+}
+message PlantResp {
+    bool ok = 1;
+    string msg = 2;
+}
